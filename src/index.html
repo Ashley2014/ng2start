@@ -8,6 +8,7 @@
   <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
   <!-- base url -->
   <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
+
   <% if (webpackConfig.htmlElements.headTags) { %>
   <!-- Configured Head Tags  -->
   <%= webpackConfig.htmlElements.headTags %>
@@ -29,7 +30,6 @@
 </head>
 
 <body>
-
   <app>
     Loading...
   </app>
