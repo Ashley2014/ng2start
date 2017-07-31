@@ -22,8 +22,8 @@ const IgnorePlugin = require('webpack/lib/IgnorePlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
 const NormalModuleReplacementPlugin = require('webpack/lib/NormalModuleReplacementPlugin');
 const ProvidePlugin = require('webpack/lib/ProvidePlugin');
-// const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin'); //webpack3.0
+const UglifyJsPlugin = require('webpack/lib/optimize/UglifyJsPlugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin'); //webpack3.0
 const OptimizeJsPlugin = require('optimize-js-plugin');
 
 /**
