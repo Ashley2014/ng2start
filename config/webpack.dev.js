@@ -14,6 +14,7 @@ const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const NamedModulesPlugin = require('webpack/lib/NamedModulesPlugin');
 const LoaderOptionsPlugin = require('webpack/lib/LoaderOptionsPlugin');
+const proxy = require('http-proxy-middleware');
 
 /**
  * Webpack Constants
@@ -237,6 +238,21 @@ module.exports = function (options) {
         // app.get('/some/path', function(req, res) {
         //   res.json({ custom: 'response' });
         // });
+        //反向代理
+        app.use('/api', proxy({
+          target: 'http://www.baidu.com',
+          changeOrigin: true,
+          pathRewrite: {'^/api' : ''},
+          onProxyRes:function(proxyReq, req, res) {
+
+          },
+          onProxyReQ:function(proxyReq, req, res) {
+            // add custom header to request
+            // or log the req
+          },
+        }));
+
+
       }
     },
 
